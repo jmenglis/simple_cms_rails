@@ -1,5 +1,6 @@
 class CreateUsers < ActiveRecord::Migration
   def up
+    # to remove id create_table :users {:id => false} do |t|
     create_table :users do |t|
       t.column "first_name", :string, :limit => 25
       t.string "last_name", :limit => 50
