@@ -29,16 +29,14 @@ text = "This is a long text example for http://lynda.com. It includes line break
 <%= highlight(text, ['example', 'rambles'], :highlighter => '<em>\1</em>') %>
 <hr />
 
-<h2>auto_link</h2>
-DEPRECATED
-<%=
-#auto_link(text)
-%>
-<hr />
 
 <h2>pluralize</h2>
-<%= "ox".pluralize %><br />
-<% (1..3).each do |n| %>
+<%= "student".pluralize %><br />
+<%= "ox".pluralize %><br /><br />
+<%= pluralize(2, 'product') %><br />
+<br />
+<% [0, 1, 20].each do |n| %>
+  <%= pluralize(n, 'product') %><br />
   <%= pluralize(n, 'octopus') %><br />
   <%= pluralize(n, 'snipe', 'snope') %><br />
 <% end %>
