@@ -16,7 +16,8 @@ class DemoController < ApplicationController
   def me
     redirect_to("http://joshenglish.com")
   end
-
+  def text_helpers
+  end
 
 
 end
