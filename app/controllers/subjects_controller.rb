@@ -67,7 +67,7 @@ class SubjectsController < ApplicationController
   private
     # same as params[:subject], except the only data that can be mass assigned is listed.
     def subject_params
-      params.require(:subject).permit(:name, :position, :visible)
+      params.require(:subject).permit(:name, :position, :visible, :created_at)
     end
 
 end
