@@ -26,6 +26,8 @@ class PagesController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
+    @subjects = Subject.order('position ASC')
+    @page_count = Page.count
   end
 
   def update
