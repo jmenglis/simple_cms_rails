@@ -1,6 +1,8 @@
 class AdminUser < ActiveRecord::Base
   # To configure a different table name:
   # self.table_name = "admin_users"
+  scope :sorted, lambda { order("last_name ASC, first_name ASC") }
+
 
   has_secure_password
 
@@ -41,6 +43,11 @@ class AdminUser < ActiveRecord::Base
       errors.add(:username, "has been restricted from use")
     end
   end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
 
   # Errors not related to specific attirbute
   # can be added to errors[:base]
