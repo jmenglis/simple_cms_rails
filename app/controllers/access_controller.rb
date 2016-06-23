@@ -1,4 +1,7 @@
 class AccessController < ApplicationController
+
+  layout 'admin'
+
   def index
     # display text
   end
@@ -10,7 +13,7 @@ class AccessController < ApplicationController
   def attempt_login
     if params[:username].present? && params[:password].present?
       found_user = AdminUser.where(:username => params[:username]).first
-      if founder_user
+      if found_user
         authorized_user = found_user.authenticate(params[:password])
       end
     end
