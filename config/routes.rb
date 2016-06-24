@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'public/index'
+
+  get 'public/show'
+
   # get 'demo/index'
   root "demo#index"
 

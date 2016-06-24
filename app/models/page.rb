@@ -7,6 +7,7 @@ class Page < ActiveRecord::Base
 
   before_validation :add_default_permalink
   after_save :touch_subject
+  after_destory :delete_related_sections
 
   validates_presence_of :name
   validates_length_of :name, :maximum => 255
@@ -33,4 +34,11 @@ class Page < ActiveRecord::Base
     # subject.update_attribute(:updated_at, Time.now)
     subject.touch
   end
+
+  def delete_related_sections
+     self.sections.each do |section|
+      # section.destroy
+    end
+  end
+
 end

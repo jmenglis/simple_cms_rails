@@ -1,6 +1,10 @@
 class Subject < ActiveRecord::Base
 
   # relationships
+
+  # could delete related pages automatically
+  # whenever a subject is deleted:
+  # has_many :pages, :dependent => :destroy
   has_many :pages
 
   acts_as_list
