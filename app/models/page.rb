@@ -7,7 +7,7 @@ class Page < ActiveRecord::Base
 
   before_validation :add_default_permalink
   after_save :touch_subject
-  after_destory :delete_related_sections
+  after_destroy :delete_related_sections
 
   validates_presence_of :name
   validates_length_of :name, :maximum => 255
