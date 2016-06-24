@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'acts_as_list', '~> 0.7.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
